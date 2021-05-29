@@ -13,11 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('tblauthors', function (Blueprint $table) {
+        Schema::create('tblbooks', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('gender');
-            $table->string('birhday');
+            $table->string('bookname');
+            $table->string('yearpublish');
+            $table->string('authorid');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblauthors');
+        Schema::dropIfExists('tblbooks');
     }
 }

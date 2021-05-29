@@ -11,7 +11,7 @@ trait ApiResponser
  * @return Illuminate\Http\JsonResponse
  */
  public function successResponse($data, $code = Response::HTTP_OK){
-    return response()->json(['data' => $data, 'site' => 2], $code);
+    return response()->json(['data' => $data, 'site' => 1], $code);
  }
  /**
  * Build error responses
