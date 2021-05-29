@@ -37,9 +37,13 @@ Class UserController extends Controller {
         $rules = [
             'bookname' => 'required|max:150',
             'yearpublish' => 'required|numeric|min:1|not_in:0',
+            'authorid' => 'required|numeric|min:1|not_in:0',
         ];
 
         $this->validate($request,$rules);
+        
+        // validate author id if found in tblauthors
+        $bookAuthor = BookAuthor::findOrFail($request->id);    
 
         $user = User::create($request->all());
         return $this->successResponse($user,Response::HTTP_CREATED);
@@ -67,10 +71,14 @@ Class UserController extends Controller {
         $rules = [
             'bookname' => 'required|max:150',
             'yearpublish' => 'required|numeric|min:1|not_in:0',
+            'authorid' => 'required|numeric|min:1|not_in:0',
         ];
 
         $this->validate($request, $rules);
-
+        
+        // validate author id if found in tblauthors
+        $bookAuthor = BookAuthor::findOrFail($request->id);
+        
         $user = User::findOrFail($id);
         $user->fill($request->all());
 
