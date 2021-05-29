@@ -6,11 +6,11 @@
 
  class User extends Model{
 
-    protected $table = 'tblauthors';
+    protected $table = 'tblbooks';
     // column sa table
 
     protected $fillable = [
-        'fullname', 'gender' , 'birthday'
+        'bookname', 'yearpublish' , 'authorid'
     ];
 
     public $timestamps = false;

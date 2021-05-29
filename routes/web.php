@@ -19,14 +19,14 @@ $router->get('/', function () use ($router) {
 
 // unsecure routes
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/authors',['uses' => 'UserController@getUsers']);
+    $router->get('/books',['uses' => 'UserController@getUsers']);
 });
 
 // more simple routes
-$router->get('/authors', 'UserController@index'); // get all users records
-$router->post('/authors', 'UserController@addUser'); // create new user record
-$router->get('/authors/{id}', 'UserController@show'); // get user by id
-$router->put('/authors/{id}', 'UserController@update'); // update user record
-$router->patch('/authors/{id}', 'UserController@update'); // update user record
-$router->delete('/authors/{id}', 'UserController@delete'); // delete record
+$router->get('/books', 'UserController@index'); // get all users records
+$router->post('/books', 'UserController@addBooks'); // create new user record
+$router->get('/books/{id}', 'UserController@show'); // get user by id
+$router->put('/books/{id}', 'UserController@update'); // update user record
+$router->patch('/books/{id}', 'UserController@update'); // update user record
+$router->delete('/books/{id}', 'UserController@delete'); // delete record
 

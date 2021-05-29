@@ -19,7 +19,7 @@ Class UserController extends Controller {
 
     public function getUsers(){
         
-        $users = DB::connection('mysql')->select("Select * from tblauthors");
+        $users = DB::connection('mysql')->select("Select * from tblbooks");
 
         //return response()->json($users, 200);
         return $this->successResponse($users);
@@ -32,11 +32,10 @@ Class UserController extends Controller {
         return $this->successResponse($users);  
     }
 
-    public function addUser(Request $request ){
+    public function addBooks(Request $request ){
 
         $rules = [
-            'fullname' => 'required|max:150',
-            'gender' => 'required|in:Male,Female',
+            'bookname' => 'required|max:150',
         ];
 
         $this->validate($request,$rules);
@@ -65,8 +64,7 @@ Class UserController extends Controller {
     public function update(Request $request,$id){
 
         $rules = [
-            'fullname' => 'required|max:150',
-            'gender' => 'required|in:Male,Female',
+            'bookname' => 'required|max:150',
         ];
 
         $this->validate($request, $rules);
