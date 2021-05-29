@@ -12,7 +12,7 @@ class BookAuthor extends Model
     protected $table = "tblauthors";
 
     protected $fillable = [
-        'fullname', 'gender' , 'birthday'
+        'id','fullname', 'gender' , 'birthday'
     ];
 
     public $timestamps = false;
