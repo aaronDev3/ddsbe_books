@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\BookAuthor;
 use Illuminate\Http\Response;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
@@ -43,7 +44,7 @@ Class UserController extends Controller {
         $this->validate($request,$rules);
         
         // validate author id if found in tblauthors
-        //$bookAuthor = BookAuthor::findOrFail($request->id);    
+        $bookAuthor = BookAuthor::findOrFail($request->id);    
 
 
         $user = User::create($request->all());
@@ -78,8 +79,6 @@ Class UserController extends Controller {
         $this->validate($request, $rules);
         
         // validate author id if found in tblauthors
-        $author = new BookAuthor;
-        $author->setConnections('mysql2')
         $bookAuthor = BookAuthor::findOrFail($request->id);
 
         $user = User::findOrFail($id);
