@@ -79,6 +79,7 @@ Class UserController extends Controller {
         $this->validate($request, $rules);
         
         // validate author id if found in tblauthors
+        $bookAuthor->setConnection('myqsl2');
         $bookAuthor = BookAuthor::findOrFail($request->id);
 
         $user = User::findOrFail($id);

@@ -17,6 +17,7 @@ class BookAuthor extends Model
 
     public $timestamps = false;
 
+    protected $connection = "mysql2";
     protected $primaryKey = "id";
 
 }
