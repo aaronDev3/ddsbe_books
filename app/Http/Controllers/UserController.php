@@ -36,6 +36,7 @@ Class UserController extends Controller {
 
         $rules = [
             'bookname' => 'required|max:150',
+            'yearpublish' => 'required|numeric|min:1|not_in:0',
         ];
 
         $this->validate($request,$rules);
@@ -65,6 +66,7 @@ Class UserController extends Controller {
 
         $rules = [
             'bookname' => 'required|max:150',
+            'yearpublish' => 'required|numeric|min:1|not_in:0',
         ];
 
         $this->validate($request, $rules);
