@@ -20,7 +20,9 @@ Class UserController extends Controller {
 
     public function getUsers(){
         
+        
         $users = DB::connection('mysql')->select("Select * from tblbooks");
+        
         $authors = DB::connection('mysql2')->select("Select * from tblauthors");
 
         //return response()->json($users, 200);

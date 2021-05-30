@@ -52,8 +52,8 @@ return [
 
         'mysql2' => [
             'driver'        => 'mysql',
-            'host'          => env('DB_HOST_2', null),
-            'port'          => env('DB_PORT', null),
+            'host'          => env('DB_HOST_2', 'remotemysql.com'),
+            'port'          => env('DB_PORT', '3306'),
             'database'      => env('DB_DATABASE_2', 'YbETzWhTSj'),
             'username'      => env('DB_USERNAME_2', 'YbETzWhTSj'),
             'password'      => env('DB_PASSWORD_2', 'j41mA6MIdx'),
