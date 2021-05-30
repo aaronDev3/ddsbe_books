@@ -65,7 +65,7 @@ Class UserController extends Controller {
     
     public function show($id){
 
-        $user = BookAuthor::findOrFail($id);
+        $user = User::findOrFail($id);
         return $this->successResponse($user);
 
     }
@@ -88,6 +88,7 @@ Class UserController extends Controller {
         // validate author id if found in tblauthors
         $bookAuthor = BookAuthor::findOrFail($request->id);
 
+        $user = BookAuthor::findOrFail($bookAuthor);
         $user = User::findOrFail($id);
         $user->fill($request->all());
 
