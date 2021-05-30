@@ -34,8 +34,8 @@ Class UserController extends Controller {
 
     public function index(){
 
-        //$users = User::all();
-        $users = BookAuthor::all();
+        $users = User::all();
+        //$users = BookAuthor::all();
         return $this->successResponse($users);  
     }
 
