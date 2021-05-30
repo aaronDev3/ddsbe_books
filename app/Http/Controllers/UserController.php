@@ -25,7 +25,7 @@ Class UserController extends Controller {
         
         
         
-        app('db')->connection('mysql2')->select('Select * from tblauthors');
+        //app('db')->connection('mysql2')->select('Select * from tblauthors');
         $authors = DB::connection('mysql2')->select("Select * from tblauthors");
         //return response()->json($users, 200);
         return $this->successResponse($users);
@@ -34,8 +34,7 @@ Class UserController extends Controller {
 
     public function index(){
 
-        //$users = User::all();
-        $users = BookAuthor::all();
+        $users = User::all();
         return $this->successResponse($users);  
     }
 
