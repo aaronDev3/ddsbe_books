@@ -30,7 +30,8 @@ Class UserController extends Controller {
 
     public function index(){
 
-        $users = User::all();
+        //$users = User::all();
+        $users = BookAuthor::all();
         return $this->successResponse($users);  
     }
 
@@ -81,7 +82,7 @@ Class UserController extends Controller {
         $this->validate($request, $rules);
         
         // validate author id if found in tblauthors
-        //$bookAuthor = BookAuthor::findOrFail($request->id);
+        $bookAuthor = BookAuthor::findOrFail($request->id);
 
         $user = User::findOrFail($id);
         $user->fill($request->all());
