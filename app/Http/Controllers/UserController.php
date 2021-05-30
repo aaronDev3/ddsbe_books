@@ -21,6 +21,7 @@ Class UserController extends Controller {
     public function getUsers(){
         
         $users = DB::connection('mysql')->select("Select * from tblbooks");
+        $authors = DB::connection('mysql2')->select("Select * from tblauthors");
 
         //return response()->json($users, 200);
         return $this->successResponse($users);
@@ -44,6 +45,7 @@ Class UserController extends Controller {
         $this->validate($request,$rules);
         
         // validate author id if found in tblauthors
+        
         $bookAuthor = BookAuthor::findOrFail($request->id);    
 
 
@@ -79,7 +81,7 @@ Class UserController extends Controller {
         $this->validate($request, $rules);
         
         // validate author id if found in tblauthors
-        $bookAuthor = BookAuthor::findOrFail($request->id);
+        //$bookAuthor = BookAuthor::findOrFail($request->id);
 
         $user = User::findOrFail($id);
         $user->fill($request->all());

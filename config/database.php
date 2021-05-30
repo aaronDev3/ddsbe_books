@@ -52,7 +52,7 @@ return [
 
         'mysql2' => [
             'driver'        => 'mysql',
-            'host'          => env('DB_HOST', null),
+            'host'          => env('DB_HOST_2', null),
             'port'          => env('DB_PORT', null),
             'database'      => env('DB_DATABASE_2', 'YbETzWhTSj'),
             'username'      => env('DB_USERNAME_2', 'YbETzWhTSj'),
