@@ -23,9 +23,6 @@ Class UserController extends Controller {
         
         $users = DB::connection('mysql')->select("Select * from tblbooks");
         
-        
-        
-        //app('db')->connection('mysql2')->select('Select * from tblauthors');
         $authors = DB::connection('mysql2')->select("Select * from tblauthors");
         //return response()->json($users, 200);
         return $this->successResponse($users);
