@@ -46,8 +46,7 @@ Class UserController extends Controller {
         $this->validate($request,$rules);
         
         // validate author id if found in tblauthors
-        
-        $bookAuthor = BookAuthor::findOrFail($request->id);    
+        $bookAuthor = BookAuthor::findOrFail($request->authorid); 
 
 
         $user = User::create($request->all());
