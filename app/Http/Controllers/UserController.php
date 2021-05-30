@@ -87,6 +87,7 @@ Class UserController extends Controller {
         
         // validate author id if found in tblauthors
         $bookAuthor = BookAuthor::findOrFail($request->id);
+        <dd>$bookAuthor</dd>
 
         $user = User::findOrFail($id);
         $user->fill($request->all());
