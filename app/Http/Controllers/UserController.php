@@ -75,7 +75,7 @@ Class UserController extends Controller {
         * @return Illuminate\Http\Response
         */
 
-    public function update(Request $request,$bookId){
+    public function update(Request $request,$id){
 
         $rules = [
             'bookname' => 'required|max:150',
@@ -88,7 +88,7 @@ Class UserController extends Controller {
         // validate author id if found in tblauthors
         $bookAuthor = BookAuthor::findOrFail($request->id);
 
-        $user = User::findOrFail($bookId);
+        $user = User::findOrFail($id);
         $user->fill($request->all());
 
         if ($user->isClean()) {
