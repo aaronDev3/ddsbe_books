@@ -7,14 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookAuthor extends Model
 {
-
-    
     protected $table = "tblauthors";
-
-    protected $fillable = [
-        'id','fullname', 'gender' , 'birthday'
-    ];
-
     protected $connection = 'mysql2';
     public $timestamps = false;
     protected $primaryKey = "id";
